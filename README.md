@@ -20,7 +20,7 @@ Query filtering merujuk pada proses menyaring atau membatasi hasil query berdasa
 - Input
 
 ```sql
-SELECT * FROM pegawai WHERE gaji <> 2000000 AND gaji <>125000;
+SELECT * FROM pegawai WHERE gaji <> 2000000 AND gaji <> 125000;
 ```
 
 - Output
@@ -65,7 +65,7 @@ SELECT COUNT(*) AS jumlah_baris FROM pegawai;
 - Input
 
 ```sql
-SELECT SUM(gaji) AS total_gaji FROM pegawai;
+SELECT SUM(gaji) AS Jumlah FROM pegawai;
 ```
 
 - Output
@@ -77,7 +77,7 @@ SELECT SUM(gaji) AS total_gaji FROM pegawai;
 - Input
 
 ```sql
-SELECT AVG(gaji) AS rata_gaji FROM pegawai;
+SELECT AVG(gaji) AS rerata FROM pegawai;
 ```
 
 - Output
@@ -89,7 +89,7 @@ SELECT AVG(gaji) AS rata_gaji FROM pegawai;
 - Input
 
 ```sql
-SELECT MIN(gaji) AS gaji_terkecil FROM pegawai;
+SELECT MIN(gaji) AS terkecil FROM pegawai;
 ```
 
 - Output
@@ -101,7 +101,7 @@ SELECT MIN(gaji) AS gaji_terkecil FROM pegawai;
 - Input
 
 ```sql
-SELECT MAX(gaji) AS gaji_terbesar FROM pegawai;
+SELECT MAX(gaji) AS terbesar FROM pegawai;
 ```
 
 - Output
@@ -120,7 +120,7 @@ SELECT MAX(gaji) AS gaji_terbesar FROM pegawai;
 - Input
 
 ```sql
-SELECT owner, COUNT(*) AS jumlah_hewan FROM hewan GROUP BY owner;
+SELECT owner, COUNT(*) AS Jumlah FROM hewan GROUP BY owner;
 ```
 
 - Output
@@ -131,7 +131,7 @@ SELECT owner, COUNT(*) AS jumlah_hewan FROM hewan GROUP BY owner;
 - Input
 
 ```sql
-SELECT species, COUNT(*) AS jumlah_hewan FROM hewan GROUP BY species;
+SELECT species, COUNT(*) AS Jumlah FROM hewan GROUP BY species;
 ```
 
 - Output
@@ -142,7 +142,7 @@ SELECT species, COUNT(*) AS jumlah_hewan FROM hewan GROUP BY species;
 - Input
 
 ```sql
-SELECT sex, COUNT(*) AS jumlah_hewan FROM hewan GROUP BY sex;
+SELECT sex, COUNT(*) AS Jumlah FROM hewan GROUP BY sex;
 ```
 
 - Output
@@ -153,7 +153,7 @@ SELECT sex, COUNT(*) AS jumlah_hewan FROM hewan GROUP BY sex;
 - Input
 
 ```sql
-SELECT sex, COUNT(*) AS jumlah_hewan FROM hewan GROUP BY sex;
+SELECT species, sex, COUNT(*) AS Jumlah FROM hewan GROUP BY species, sex;
 ```
 
 - Output
@@ -162,10 +162,9 @@ SELECT sex, COUNT(*) AS jumlah_hewan FROM hewan GROUP BY sex;
 5. Tampilkan jumlah hewan berdasarkan spesis (cat dan dog saja)
    dan jenis kelamin
    - Input
+   
    ```sql
-   SELECT species,sex, COUNT(*) AS jumlah_hewan FROM hewan
-   WHERE species IN('Cat','Dog')
-   GROUP BY species,sex;
+   SELECT species,sex, COUNT(*) AS Jumlah FROM hewan WHERE species IN('Cat','Dog') GROUP BY species,sex;
    ```
 
 - Output
@@ -178,9 +177,7 @@ SELECT sex, COUNT(*) AS jumlah_hewan FROM hewan GROUP BY sex;
    - Input
 
    ```sql
-   SELECT sex, COUNT(*) AS jumlah_hewan FROM hewan
-   WHERE sex IN('f','m')
-   GROUP BY sex;
+   SELECT sex, COUNT(*) AS Jumlah FROM hewan WHERE sex IN('f','m') GROUP BY sex;
    ```
 
    - Output
